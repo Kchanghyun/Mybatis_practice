@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mssql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://dokalab.iptime.org:10992/db_gwteam"/>
+                <property name="username" value="gwteam"/>
+                <property name="password" value="gwteam"/>
+            </dataSource>
+        </environment>
+    </environments>
+</configuration>
