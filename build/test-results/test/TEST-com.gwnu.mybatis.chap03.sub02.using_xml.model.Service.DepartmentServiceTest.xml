@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gwnu.mybatis.chap03.sub02.using_xml.model.Service.DepartmentServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-09-28T13:27:49" hostname="gimchanghyeon-ui-MacBookAir.local" time="0.431">
+  <properties/>
+  <testcase name="신규 부서 추가 테스트" classname="com.gwnu.mybatis.chap03.sub02.using_xml.model.Service.DepartmentServiceTest" time="0.431"/>
+  <system-out><![CDATA[[DepartmentDto(departmentId=1, departmentName=개발팀), DepartmentDto(departmentId=2, departmentName=영업팀), DepartmentDto(departmentId=3, departmentName=인사팀), DepartmentDto(departmentId=4, departmentName=퍼블리셔팀), DepartmentDto(departmentId=5, departmentName=기획팀), DepartmentDto(departmentId=6, departmentName=운영팀)]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
