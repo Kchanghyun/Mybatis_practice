@@ -95,11 +95,4 @@ public class EmployeeService {
 
         return result;
     }
-
-//    public int updateNewEmployee(EmployeeDto employeeDto) {
-//        SqlSession session = getSqlSession();
-//        EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
-//
-//        int result = 0;
-//    }
 }

@@ -19,13 +19,13 @@ public class Template {
     private static SqlSessionFactory sqlSessionFactory;
 
     public static SqlSession getSqlSession() {
-        if (sqlSessionFactory == null) {
+        if (sqlSessionFactory == null) { // 아직 생성되지 않았다면
             Environment environment = new Environment(
                     "dev",
-                    new JdbcTransactionFactory(),
-                    new PooledDataSource(DRIVER, URL, USER, PASSWORD)
+                    new JdbcTransactionFactory(), // JDBC를 사용한 트랜잭션 처리를 위한 팩토리
+                    new PooledDataSource(DRIVER, URL, USER, PASSWORD) // 데이터베이스 연결을 관리하기 위한 커넥션 풀
             );
-            Configuration configuration = new Configuration(environment);
+            Configuration configuration = new Configuration(environment); // MyBatis의 설정 클래스, 매퍼와 환경 설정을 포함
 
             configuration.addMapper(DepartmentMapper.class);
             configuration.addMapper(EmployeeMapper.class);
@@ -33,6 +33,6 @@ public class Template {
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(configuration);
         }
 
-        return sqlSessionFactory.openSession(false);
+        return sqlSessionFactory.openSession(false); // 새로운 SqlSession을 생성, false를 전달하면 자동 커밋이 비활성화
     }
 }
