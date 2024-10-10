@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gwnu.mybatis.chap03.sub02.using_xml.model.dao.EmployeeMapper">
+    <resultMap id="employeeResultMap" type="com.gwnu.mybatis.chap03.sub02.using_xml.model.dto.EmployeeDto">
+        <id column="emp_id" property="employeeId" />
+        <result column="emp_name" property="employeeName" />
+        <result column="dept_id" property="departmentId" />
+    </resultMap>
+
+    <select id="selectAllEmployee" resultMap="employeeResultMap">
+        select *
+        from tbl_employee
+    </select>
+
+    <insert id="insertEmployee" parameterType="com.gwnu.mybatis.chap03.sub02.using_xml.model.dto.EmployeeDto">
+        insert into tbl_employee
+        values (null, #{ employeeName }, #{ departmentId })
+    </insert>
+
+    <delete id="deleteEmployee" parameterType="com.gwnu.mybatis.chap03.sub02.using_xml.model.dto.EmployeeDto">
+        delete from tbl_employee
+        where emp_id = #{ employeeId }
+    </delete>
+
+    <update id="updateEmployee" parameterType="com.gwnu.mybatis.chap03.sub02.using_xml.model.dto.EmployeeDto">
+        update tbl_employee
+        set emp_name = #{ employeeName }, dept_id = #{ departmentId }
+        where emp_id = #{ employeeId }
+    </update>
+</mapper>

@@ -35,4 +35,30 @@ public class DepartmentService {
 
         return result;
     }
+
+    public int deleteDepartment(DepartmentDto departmentDto) {
+        SqlSession session = getSqlSession();
+        DepartmentMapper mapper = session.getMapper(DepartmentMapper.class);
+        int result = mapper.deleteDepartment(departmentDto);
+
+        if (result > 0) session.commit();
+        else session.rollback();
+
+        session.close();
+
+        return result;
+    }
+
+    public int updateDepartment(DepartmentDto departmentDto) {
+        SqlSession session = getSqlSession();
+        DepartmentMapper mapper = session.getMapper(DepartmentMapper.class);
+        int result = mapper.updateDepartment(departmentDto);
+
+        if (result > 0) session.commit();
+        else session.rollback();
+
+        session.close();
+
+        return result;
+    }
 }

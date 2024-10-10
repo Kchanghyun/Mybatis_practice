@@ -8,4 +8,8 @@ public interface DepartmentMapper {
     List<DepartmentDto> selectAllDepartments();
 
     int insertNewDepartment(DepartmentDto departmentDto);
+
+    int deleteDepartment(DepartmentDto departmentDto);
+
+    int updateDepartment(DepartmentDto departmentDto);
 }

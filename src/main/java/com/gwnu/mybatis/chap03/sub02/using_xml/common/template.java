@@ -10,6 +10,7 @@ import java.io.InputStream;
 
 public class template {
     private static SqlSessionFactory sqlSessionFactory;
+    // SqlSessionFactory는 MyBatis 라이브러리에서 제공하는 클래스
 
     public static SqlSession getSqlSession() {
 

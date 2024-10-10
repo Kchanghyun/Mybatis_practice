@@ -8,13 +8,28 @@
         <result column="dept_name" property="departmentName" />
     </resultMap>
 
+    <!-- 부서 조회 -->
     <select id="selectAllDepartments" resultMap="departmentResultMap">
         select *
         from tbl_department
     </select>
 
+    <!-- 부서 추가 -->
     <insert id="insertNewDepartment" parameterType="com.gwnu.mybatis.chap03.sub02.using_xml.model.dto.DepartmentDto">
         insert into tbl_department
         values(null, #{ departmentName })
     </insert>
+
+    <!-- 부서 삭제 -->
+    <delete id="deleteDepartment" parameterType="com.gwnu.mybatis.chap03.sub02.using_xml.model.dto.DepartmentDto">
+        delete from tbl_department
+        where dept_id = #{ departmentId }
+    </delete>
+
+    <!-- 부서 수정 -->
+    <update id="updateDepartment" parameterType="com.gwnu.mybatis.chap03.sub02.using_xml.model.dto.DepartmentDto">
+        update tbl_department
+        set dept_name = #{ departmentName }
+        where dept_id = #{ departmentId }
+    </update>
 </mapper>
